@@ -1,8 +1,8 @@
 <template>
   <div id="home">
-    <div id="usuarios" v-on:click="openComponent">Usuarios</div>
-    <div id="domicilios" v-on:click="openComponent">Domicilios</div>
-    <div id="cuentas" v-on:click="openComponent">Cuentas bancarias</div>
+    <div id="usuarios" class="menuPrincipal" v-on:click="openComponent">Usuarios</div>
+    <div id="domicilios" class="menuPrincipal" v-on:click="openComponent">Domicilios</div>
+    <div id="cuentas" class="menuPrincipal" v-on:click="openComponent">Cuentas bancarias</div>
 
     <div id="maestro"></div>
   </div>
@@ -11,9 +11,9 @@
 <script>
   import axios from "axios"
   import Vue from 'vue'
-  //import MaestroUsuario from "usuarios.vue"
-  //import MaestroDomicilio from "domicilios.vue"
-  //import MaestroCuentas from "cuentas.vue"
+  //import MaestroUsuario from "./AppUsuario.vue"
+  //import MaestroDomicilio from "./AppDomicilio.vue"
+  import MaestroCuentas from "./AppCuentaBancaria.vue"
   export default {
     name: 'app',
     data () {
@@ -27,21 +27,21 @@
           case "usuarios": 
           new Vue({
             el: '#maestro',
-            render: h => h(App)
+            render: h => h(MaestroUsuario)
           })
 
           break;
           case "domicilios": 
           new Vue({
             el: '#maestro',
-            render: h => h(App)
+            render: h => h(MaestroDomicilio)
           })
 
           break;
           case "cuentas": 
           new Vue({
             el: '#maestro',
-            render: h => h(App)
+            render: h => h(MaestroCuentas)
           })
 
           break;
@@ -55,6 +55,15 @@
 
 <style>
   *{
+    box-sizing: border-box;
+  }
+  .menuPrincipal {
     padding: 5px;
+    display:inline-block;
+    width: 33%;
+    text-align: center;
+    background-color: #e0dede; 
+    border-radius: 5px;
+    border: 2px solid #777777;
   }
 </style>
