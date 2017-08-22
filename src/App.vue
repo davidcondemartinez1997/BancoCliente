@@ -11,8 +11,8 @@
 <script>
   import axios from "axios"
   import Vue from 'vue'
-  //import MaestroUsuario from "usuarios.vue"
-  //import MaestroDomicilio from "domicilios.vue"
+  import MaestroUsuario from "./AppUsuario.vue"
+  import MaestroDomicilio from "./AppDomicilio.vue"
   //import MaestroCuentas from "cuentas.vue"
   export default {
     name: 'app',
@@ -27,21 +27,21 @@
           case "usuarios": 
           new Vue({
             el: '#maestro',
-            render: h => h(App)
+            render: h => h(MaestroUsuario)
           })
 
           break;
           case "domicilios": 
           new Vue({
             el: '#maestro',
-            render: h => h(App)
+            render: h => h(MaestroDomicilio)
           })
 
           break;
           case "cuentas": 
           new Vue({
             el: '#maestro',
-            render: h => h(App)
+            render: h => h(MaestroCuentas)
           })
 
           break;
