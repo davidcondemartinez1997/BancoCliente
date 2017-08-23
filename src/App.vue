@@ -1,8 +1,8 @@
 <template>
   <div id="home">
-    <div id="usuarios" v-on:click="openComponent">Usuarios</div>
-    <div id="domicilios" v-on:click="openComponent">Domicilios</div>
-    <div id="cuentas" v-on:click="openComponent">Cuentas bancarias</div>
+    <div id="usuarios" class="menuPrincipal" v-on:click="openComponent">Usuarios</div>
+    <div id="domicilios" class="menuPrincipal" v-on:click="openComponent">Domicilios</div>
+    <div id="cuentas" class="menuPrincipal" v-on:click="openComponent">Cuentas bancarias</div>
 
     <div id="maestro"></div>
   </div>
@@ -13,7 +13,7 @@
   import Vue from 'vue'
   import MaestroUsuario from "./AppUsuario.vue"
   import MaestroDomicilio from "./AppDomicilio.vue"
-  //import MaestroCuentas from "cuentas.vue"
+  import MaestroCuentas from "./AppCuentaBancaria.vue"
   export default {
     name: 'app',
     data () {
@@ -55,6 +55,15 @@
 
 <style>
   *{
+    box-sizing: border-box;
+  }
+  .menuPrincipal {
     padding: 5px;
+    display:inline-block;
+    width: 33%;
+    text-align: center;
+    background-color: #e0dede; 
+    border-radius: 5px;
+    border: 2px solid #777777;
   }
 </style>
