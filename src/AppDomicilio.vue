@@ -13,7 +13,7 @@
       </tr>
     </table>
 
-    <input type="button" id="submit" value="Nuevo" v-on:click="nuevo"/>
+   <button id="submit"  v-on:click="nuevo">Nuevo</button>
     <div id="form" v-on:update="init"></div>
   </div>
 

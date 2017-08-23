@@ -13,7 +13,7 @@
     border: 2px solid #777777;
   }
 
-  table, tr, td{
+  table{
     list-style: none;
     text-align: center;
     border: 1px solid black;
@@ -33,6 +33,16 @@
   }
   input[type=text], input[type=number]{
     width: 70%;
+  }
+  button{
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+    display:block;
+    margin: 5px;
+    background-color: #e0dede;
+    border: 2px solid #777777;
+    border-radius: 5px;
   }
 }
 

@@ -17,8 +17,8 @@
       </div>
     </div>
 
-    <input type="button" id="submit" value="Enviar" v-on:click="enviar"/>
-    <input type="button" id="submit" value="Eliminar" v-on:click="eliminar" v-if="domicilio.Id !== -1"/>
+    <button id="submit" value="Enviar" v-on:click="enviar">Enviar</button>
+      <button id="submit" value="Eliminar" v-on:click="eliminar" v-if="domicilio.Id !== -1">Eliminar</button>
   </div>
   </div>
 </template>

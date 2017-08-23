@@ -15,8 +15,8 @@
         <label>Saldo:</label>
         <input type="number" id="saldo" name="saldo"v-bind:value="cuenta.Saldo" />   
       </div>
-      <input type="button" id="submit" value="Enviar" v-on:click="enviar"/>
-      <input type="button" id="submit" value="Eliminar" v-on:click="eliminar" v-if="cuenta.Id !== -1"/>
+      <button id="submit" value="Enviar" v-on:click="enviar">Enviar</button>
+      <button id="submit" value="Eliminar" v-on:click="eliminar" v-if="cuenta.Id !== -1">Eliminar</button>
     </div>
   </div>
 </template>

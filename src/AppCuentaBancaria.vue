@@ -1,13 +1,6 @@
 <template>
   <div id="maestro">
-<<<<<<< HEAD
-    <ul v-if="cuentas && cuentas.length">
-      <li v-for="cuenta of cuentas" v-on:click="detail" v-bind:id="cuenta.Id">
-        {{cuenta.Propietario}} {{cuenta.Saldo}} €
-      </li>
-    </ul>
-    <input type="button" id="submit" value="Nuevo" v-on:click="nuevo"/>
-=======
+
     <table v-if="cuentas && cuentas.length">
       <tr>
         <th>Propietario</th>
@@ -20,8 +13,7 @@
         <td> {{cuenta.Numero}}</td>
       </tr>
     </table>
-    <input type="button" id="submit" value="Nuevo" class=".nuevo" v-on:click="nuevo"/>
->>>>>>> 95b835866241767019a9a5419dd55a601b55937f
+    <button id="submit"  v-on:click="nuevo">Nuevo</button>
     <div id="form" v-on:update="init"></div>
   </div>
 
