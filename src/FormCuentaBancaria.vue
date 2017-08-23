@@ -1,7 +1,7 @@
 <template>
-  <div id="form">
+  <div id="form" >
     <div v-if="seen">
-      <h1>Formulario</h1>
+      <h1>Formulario Cuenta Bancaria</h1>
       <div>
         <label>Numero:</label>
         <input type="text" id="numero" name="numero" v-bind:value="cuenta.Numero"/>   
@@ -15,8 +15,6 @@
         <label>Saldo:</label>
         <input type="number" id="saldo" name="saldo"v-bind:value="cuenta.Saldo" />   
       </div>
-
-
       <input type="button" id="submit" value="Enviar" v-on:click="enviar"/>
       <input type="button" id="submit" value="Eliminar" v-on:click="eliminar" v-if="cuenta.Id !== -1"/>
     </div>
@@ -68,9 +66,9 @@
   },
   created() {
     this.cuenta = this.$parent.cuenta;
-    }
-
   }
+
+}
 </script>
 
 <style>

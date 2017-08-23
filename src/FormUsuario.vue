@@ -1,25 +1,22 @@
 <template>
   <div id="form">
-    <div v-if="seen">
-      <h1>Formulario</h1>
-      <div>
-        <label>Nombre:</label>
-        <input type="text" id="nombre" name="nombre" v-bind:value="person.Nombre"/>   
-      </div>
-      <div>
-        <label>Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" v-bind:value="person.Apellidos"/>   
-      </div>
-
+  <div v-if="seen">
+    <h1>Formulario Usuario</h1>
+    <div>
+      <label>Nombre:</label>
+      <input type="text" id="nombre" name="nombre" v-bind:value="person.Nombre"/>   
+    </div>
+    <div>
+      <label>Apellidos:</label>
+      <input type="text" id="apellidos" name="apellidos" v-bind:value="person.Apellidos"/>   
+    </div>
       <div>
         <label>Edad:</label>
         <input type="number" id="edad" name="edad"v-bind:value="person.Edad" />   
       </div>
-
-
-      <input type="button" id="submit" value="Enviar" v-on:click="enviar"/>
-      <input type="button" id="submit" value="Eliminar" v-on:click="eliminar" v-if="person.Id !== -1"/>
-    </div>
+    <input type="button" id="submit" value="Enviar" v-on:click="enviar"/>
+    <input type="button" id="submit" value="Eliminar" v-on:click="eliminar" v-if="person.Id !== -1"/>
+  </div>
   </div>
 </template>
 
@@ -66,7 +63,6 @@
             EventBus.$emit("updateUsuario", this.person);
           })
         }
-
       }
     },
     created() {

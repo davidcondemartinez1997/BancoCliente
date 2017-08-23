@@ -1,15 +1,15 @@
 <template>
   <div id="form">
-    <div v-if="seen">
-      <h1>Formulario Domicilio</h1>
-      <div>
-        <label>Nombre:</label>
-        <input type="text" id="nombre" name="nombre" v-bind:value="domicilio.Nombre"/>   
-      </div>
-      <div>
-        <label>Numero:</label>
-        <input type="text" id="numero" name="numero" v-bind:value="domicilio.Numero"/>   
-      </div>
+      <div v-if="seen">
+    <h1>Formulario Domicilio</h1>
+    <div>
+      <label>Nombre:</label>
+      <input type="text" id="nombre" name="nombre" v-bind:value="domicilio.Nombre"/>   
+    </div>
+    <div>
+      <label>Numero:</label>
+      <input type="text" id="numero" name="numero" v-bind:value="domicilio.Numero"/>   
+    </div>
 
       <div>
         <label>Localidad:</label>
@@ -19,6 +19,7 @@
 
     <input type="button" id="submit" value="Enviar" v-on:click="enviar"/>
     <input type="button" id="submit" value="Eliminar" v-on:click="eliminar" v-if="domicilio.Id !== -1"/>
+  </div>
   </div>
 </template>
 
