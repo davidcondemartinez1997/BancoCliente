@@ -1,6 +1,8 @@
   *{
     box-sizing: border-box;
+    padding: 5px;
   }
+
   .menuPrincipal {
     padding: 5px;
     display:inline-block;
@@ -11,8 +13,25 @@
     border: 2px solid #777777;
   }
 
-    li {
+  table, tr, td{
     list-style: none;
+    text-align: center;
     border: 1px solid black;
-    width: 200px;
   }
+
+  table{
+    width: 100%;
+  }
+
+  input{
+    padding: 5px;
+    margin: 5px;
+  }
+  label {
+    width:25%;
+    display: inline-block;
+  }
+  input[type=text], input[type=number]{
+    width: 70%;
+  }
+}

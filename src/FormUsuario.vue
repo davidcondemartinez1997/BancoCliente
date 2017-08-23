@@ -1,6 +1,7 @@
 <template>
-  <div id="form" v-if="seen">
-    <h1>Formulario</h1>
+  <div id="form">
+  <div v-if="seen">
+    <h1>Formulario Usuario</h1>
     <div>
       <label>Nombre:</label>
       <input type="text" id="nombre" name="nombre" v-bind:value="person.Nombre"/>   
@@ -17,7 +18,8 @@
     
 
     <input type="button" id="submit" value="Enviar" v-on:click="enviar"/>
-    <input type="button" id="submit" value="Eliminar" v-on:click="eliminar"/>
+    <input type="button" id="submit" value="Eliminar" v-on:click="eliminar" v-if="person.Id !== -1"/>
+  </div>
   </div>
 </template>
 
@@ -41,15 +43,15 @@
           Id: this.person.Id
         }
 
-        if(data.Id  = -1){
-          axios.post('http://10.60.23.16:62270/api/Usuarios/' ,data)
+        if(data.Id  == -1){
+          axios.post('http://10.0.2.2:62270/api/Usuarios/' ,data)
           .then(response => {
             this.person.Id = response.data.Id;
             EventBus.$emit("updateUsuario", this.person);
           })
         }
         else{
-          axios.put('http://10.60.23.16:62270/api/Usuarios/' + data.Id, data)
+          axios.put('http://10.0.2.2:62270/api/Usuarios/' + data.Id, data)
           .then(response => {
             EventBus.$emit("updateUsuario", this.person);
           })
@@ -58,7 +60,7 @@
 
       eliminar: function(){
         this.seen = false;
-        axios.delete('http://10.60.23.16:62270/api/Usuarios/' + this.person.Id)
+        axios.delete('http://10.0.2.2:62270/api/Usuarios/' + this.person.Id)
         .then(response => {
           EventBus.$emit("updateUsuario", this.person);
         })
@@ -72,7 +74,4 @@
 </script>
 
 <style>
-  *{
-    padding: 5px;
-  }
 </style>

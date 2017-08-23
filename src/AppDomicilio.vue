@@ -1,10 +1,18 @@
 <template>
   <div id="maestro">
-    <ul v-if="direcciones && direcciones.length">
-      <li v-for="domicilio of direcciones" v-on:click="detail" v-bind:id="domicilio.Id">
-        {{domicilio.Nombre}} {{domicilio.Numero}}
-      </li>
-    </ul>
+  <table v-if="direcciones && direcciones.length">
+      <tr>
+        <th>Nombre</th>
+        <th>Numero</th>
+        <th>Localidad</th>
+      </tr>
+      <tr v-for="domicilio of direcciones" v-on:click="detail" v-bind:id="domicilio.Id">
+        <td>{{domicilio.Nombre}}</td>
+        <td> {{domicilio.Numero}}</td>
+        <td> {{domicilio.Localidad}}</td>
+      </tr>
+    </table>
+
     <input type="button" id="submit" value="Nuevo" v-on:click="nuevo"/>
     <div id="form" v-on:update="init"></div>
   </div>
@@ -27,6 +35,9 @@
     methods: {
       detail: function (e) {
         let id = e.target.id;
+        if(id == ""){
+          id = e.target.parentNode.id;
+        }
         this.direcciones.forEach((p, index) => {
           if(p.Id == id){
             new Vue({
@@ -55,7 +66,7 @@
 
       },
       init: function(){
-        axios.get('http://10.60.23.16:62270/api/Domicilio/')
+        axios.get('http://10.0.2.2:62270/api/Domicilio/')
         .then(response => {
           this.direcciones = response.data;
         })
@@ -74,13 +85,4 @@
 </script>
 
 <style>
-  *{
-    padding: 5px;
-  }
-
-  li {
-    list-style: none;
-    border: 1px solid black;
-    width: 200px;
-  }
 </style>

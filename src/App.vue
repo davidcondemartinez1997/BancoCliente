@@ -54,16 +54,5 @@
 </script>
 
 <style>
-  *{
-    box-sizing: border-box;
-  }
-  .menuPrincipal {
-    padding: 5px;
-    display:inline-block;
-    width: 33%;
-    text-align: center;
-    background-color: #e0dede; 
-    border-radius: 5px;
-    border: 2px solid #777777;
-  }
+
 </style>

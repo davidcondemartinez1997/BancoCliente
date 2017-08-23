@@ -1,10 +1,17 @@
 <template>
   <div id="maestro">
-    <ul v-if="people && people.length">
-      <li v-for="person of people" v-on:click="detail" v-bind:id="person.Id">
-        {{person.Nombre}} {{person.Apellidos}}
-      </li>
-    </ul>
+    <table v-if="people && people.length">
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+      </tr>
+      <tr v-for="person of people" v-on:click="detail" v-bind:id="person.Id">
+        <td>{{person.Nombre}}</td>
+        <td> {{person.Apellidos}}</td>
+        <td> {{person.Edad}}</td>
+      </tr>
+    </table>
     <input type="button" id="submit" value="Nuevo" v-on:click="nuevo"/>
     <div id="form" v-on:update="init"></div>
   </div>
@@ -27,6 +34,9 @@
     methods: {
       detail: function (e) {
         let id = e.target.id;
+        if(id == ""){
+          id = e.target.parentNode.id;
+        }
         this.people.forEach((p, index) => {
           if(p.Id == id){
             new Vue({
@@ -55,7 +65,7 @@
 
       },
       init: function(){
-        axios.get('http://10.60.23.16:62270/api/Usuarios/')
+        axios.get('http://10.0.2.2:62270/api/Usuarios/')
         .then(response => {
           this.people = response.data;
         })
@@ -74,13 +84,4 @@
 </script>
 
 <style>
-  *{
-    padding: 5px;
-  }
-
-  li {
-    list-style: none;
-    border: 1px solid black;
-    width: 200px;
-  }
 </style>
