@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="maestro">
     <ul v-if="cuentas && cuentas.length">
       <li v-for="cuenta of cuentas" v-on:click="detail" v-bind:id="cuenta.Id">
         {{cuenta.Propietario}} {{cuenta.Saldo}} €

@@ -74,13 +74,4 @@
 </script>
 
 <style>
-  *{
-    padding: 5px;
-  }
-
-  li {
-    list-style: none;
-    border: 1px solid black;
-    width: 200px;
-  }
 </style>
